@@ -13,8 +13,8 @@
 | `PHP_XDEBUG_3` | `1` | Use Xdebug 3 |
 | `NODE_VERSION` | varies | Node.js version |
 | `COMPOSER_VERSION` | `2` | Composer version |
-| `MYSQL_DISTRIBUTION` | `mariadb` | mariadb or mysql |
-| `MYSQL_DISTRIBUTION_VERSION` | varies | Database version |
+| `MYSQL_DISTRIBUTION` | `mariadb` | `mariadb` or `mysql` — switches the DB engine |
+| `MYSQL_DISTRIBUTION_VERSION` | varies | Database image tag (e.g. `11.4`, `8.4`) |
 
 ## Service Toggles
 
@@ -43,3 +43,16 @@
 | `RABBITMQ_VERSION` | 4.1 |
 | `OPENSEARCH_VERSION` | 3.3 |
 | `NODE_VERSION` | 20 |
+
+## Database Distribution
+
+Default is MariaDB. To switch to MySQL:
+
+```
+MYSQL_DISTRIBUTION=mysql
+MYSQL_DISTRIBUTION_VERSION=8.4
+```
+
+**Drupal and CakePHP** use different variable names: `DB_DISTRIBUTION` and `DB_DISTRIBUTION_VERSION` (same values).
+
+Switching distributions on an existing environment requires exporting data first — volumes are not compatible between MariaDB and MySQL.
