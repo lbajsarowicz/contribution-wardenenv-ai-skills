@@ -71,3 +71,18 @@
 | `warden doctor [-v]` | Diagnose Warden setup. `-v` for verbose |
 | `warden sign-certificate <domain>` | Sign SSL certificate for domain |
 | `warden vnc` | VNC access (when enabled) |
+
+## Custom Commands
+
+Add custom commands by placing `<name>.cmd` and `<name>.help` files in:
+
+| Location | Scope |
+|----------|-------|
+| `<project>/.warden/commands/` | Project only |
+| `~/.warden/commands/` | All projects (global) |
+
+**Resolution order:** project → global → built-in (project commands override global, both override built-in).
+
+The `.help` file is required for the command to appear in `warden help` output.
+
+Example: [Magento 2 template custom commands](https://github.com/wardenenv/warden-env-magento2/tree/develop/.warden/commands)
