@@ -91,6 +91,46 @@ warden valkey              # Valkey (Redis alternative)
 
 Supported: `magento2`, `magento1`, `laravel`, `symfony`, `wordpress`, `drupal`, `shopware`, `cakephp`, `local`. See `references/environments.md`.
 
+## Customizing Environments
+
+Override default Docker services by creating `.warden/warden-env.yml` in the project root. This file is a standard Docker Compose partial that merges on top of Warden's defaults (highest precedence). Preview the result with `warden env config`.
+
+**OS-specific overrides:** `.warden/warden-env.darwin.yml` (macOS) and `.warden/warden-env.linux.yml` (Linux) are also loaded if present.
+
+**Common use cases:**
+
+| Customization | Approach |
+|---------------|----------|
+| Custom PHP image | Override `php-fpm` image in `.warden/warden-env.yml` |
+| PHP config (php.ini) | Mount `.warden/php/zz-config.ini` into `php-fpm` and `php-debug` |
+| Nginx config | Mount `.warden/nginx/custom.conf` into nginx |
+| Multiple domains | Add Traefik labels via `.warden/warden-env.yml` |
+| Extra services | Define additional services in `.warden/warden-env.yml` |
+
+**Example — custom PHP image:**
+
+```yaml
+services:
+  php-fpm:
+    image: my-registry/custom-php:8.3
+  php-debug:
+    image: my-registry/custom-php:8.3-debug
+```
+
+**Example — custom PHP config:**
+
+```yaml
+services:
+  php-fpm:
+    volumes:
+      - ./.warden/php/zz-config.ini:/etc/php.d/zz-config.ini
+  php-debug:
+    volumes:
+      - ./.warden/php/zz-config.ini:/etc/php.d/zz-config.ini
+```
+
+See `references/customizing.md` for detailed patterns.
+
 ## Key .env Variables
 
 Project `.env` controls services and versions. See `references/env-variables.md` for full reference.
@@ -155,4 +195,5 @@ For "match Magento 2.4.8 requirements" requests:
 - `references/env-variables.md` – .env variable reference
 - `references/global-services.md` – Service URLs and config
 - `references/troubleshooting.md` – Common issues and solutions
+- `references/customizing.md` – Environment customization patterns
 - `examples/workflows.md` – Workflow examples
