@@ -6,10 +6,10 @@ Agent Skill for [Warden](https://warden.dev) – a Docker-based local developmen
 
 ```bash
 # Via skills CLI
-npx skills add lbajsarowicz/ai-skills-warden
+npx skills add wardenenv/ai-skills
 
 # Or via npm
-npm install @lbajsarowicz/warden-skill
+npm install @wardenenv/ai-skills
 ```
 
 ## What This Skill Provides
@@ -46,14 +46,14 @@ Releases are automated via Conventional Commits. Merge a PR with `feat:` or `fix
 ### One-time Setup
 
 1. **npm access token**
-   - Create at https://www.npmjs.com/settings/lbajsarowicz/tokens
+   - Create at npmjs.com under the org/user that owns `@wardenenv`
    - Type: Automation, enable "Bypass two-factor authentication (2FA)"
    - Add as GitHub secret: `NPM_TOKEN`
 
 2. **GitHub PAT for release**
    - Create a Personal Access Token (classic: `repo` scope, or fine-grained: `Contents` + `Metadata` = Read and write)
    - Add as GitHub secret: `RELEASE_TOKEN`
-   - **Branch protection**: If `main` is protected, add the PAT owner (e.g. `lbajsarowicz`) to **Settings → Branches → main → Allow specified actors to bypass required pull requests**. Otherwise the workflow's direct push will be rejected.
+   - **Branch protection**: If `main` is protected, add the PAT owner to **Settings → Branches → main → Allow specified actors to bypass required pull requests**. Otherwise the workflow's direct push will be rejected.
 
 ### Release Flow
 
@@ -66,16 +66,3 @@ Releases are automated via Conventional Commits. Merge a PR with `feat:` or `fix
 
 MIT - See [LICENSE](LICENSE) for details.
 
----
-
-<div align="center">
-
-### ☕ Enjoying this skill?
-
-**Consider sponsoring the maintainer** – it helps keep projects like this free and open.
-
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/lbajsarowicz?style=for-the-badge&logo=github)](https://github.com/sponsors/lbajsarowicz)
-
-**[Sponsor on GitHub →](https://github.com/sponsors/lbajsarowicz)**
-
-</div>

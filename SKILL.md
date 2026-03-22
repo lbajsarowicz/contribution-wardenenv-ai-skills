@@ -3,7 +3,7 @@ name: warden-dev
 description: Manage Docker-based local development environments with Warden. Use when setting up PHP/Node projects (Magento, Laravel, Symfony, WordPress, Drupal), importing databases, running shell commands, debugging with Xdebug, or managing Docker services. Triggers on "warden", "local environment", "docker-compose wrapper", "database import", "shell access".
 license: MIT
 metadata:
-  author: lbajsarowicz
+  author: wardenenv
   version: '1.0.0'
 ---
 

@@ -1,5 +1,5 @@
 {
-  "name": "@lbajsarowicz/warden-skill",
+  "name": "@wardenenv/ai-skills",
   "version": "1.2.0",
   "description": "Agent Skill for Warden Docker development environments",
   "keywords": [
@@ -12,11 +12,11 @@
     "cursor",
     "ai"
   ],
-  "author": "Lukasz Bajsarowicz",
+  "author": "Warden Contributors",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lbajsarowicz/ai-skills-warden.git"
+    "url": "git+https://github.com/wardenenv/ai-skills.git"
   },
   "files": [
     "SKILL.md",

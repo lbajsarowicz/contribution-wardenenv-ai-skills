@@ -75,4 +75,4 @@ The workflow will publish to npm and create a GitHub Release automatically.
 
 ## Questions
 
-Open an [Issue](https://github.com/lbajsarowicz/ai-skills-warden/issues) for questions or discussions.
+Open an [Issue](https://github.com/wardenenv/ai-skills/issues) for questions or discussions.
