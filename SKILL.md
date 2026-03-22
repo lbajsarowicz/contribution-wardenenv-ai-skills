@@ -127,6 +127,7 @@ Default domain: `warden.test`. Configure in `~/.warden/.env` (`WARDEN_SERVICE_DO
 | Webmail (Mailpit) | `https://webmail.warden.test` |
 | Portainer | `https://portainer.warden.test` |
 | phpMyAdmin | `https://phpmyadmin.warden.test` |
+| SSH Tunnel | `tunnel.warden.test:2222` (DB clients) |
 
 **Email (Mailpit):** No SMTP config needed. Warden routes sendmail to Mailpit. All emails at `https://webmail.warden.test`.
 

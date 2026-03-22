@@ -8,8 +8,24 @@
 | Webmail (Mailpit) | https://webmail.warden.test |
 | Portainer | https://portainer.warden.test |
 | phpMyAdmin | https://phpmyadmin.warden.test |
+| SSH Tunnel | `tunnel.warden.test:2222` (for DB clients) |
 
 Per-project: RabbitMQ, Elasticsearch, OpenSearch at `https://{service}.{project}.test`
+
+## SSH Tunnel (Database Clients)
+
+Warden runs an SSH tunnel service for connecting external database clients (TablePlus, Sequel Pro, PhpStorm, DBeaver, etc.) to project database containers.
+
+| Setting | Value |
+|---------|-------|
+| SSH Host | `tunnel.warden.test` |
+| SSH Port | `2222` |
+| SSH User | `user` |
+| SSH Key | `~/.warden/tunnel/ssh_key` |
+| MySQL Host | container name from `warden env ps` |
+| MySQL Port | `3306` |
+
+Auto-configured during `warden install`. No manual setup needed.
 
 ## Global Configuration (~/.warden/.env)
 
