@@ -24,10 +24,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate SKILL.md exists
-        run: test -f SKILL.md
+        run: test -f skills/warden/SKILL.md
       - name: Check SKILL.md line count (max 500)
         run: |
-          lines=$(wc -l < SKILL.md)
+          lines=$(wc -l < skills/warden/SKILL.md)
           [ "$lines" -le 500 ] || (echo "SKILL.md: $lines lines > 500" && exit 1)
       - name: Validate JSON files
         run: |
