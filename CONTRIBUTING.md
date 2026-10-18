@@ -61,7 +61,6 @@ Before merging, ensure:
 - [ ] All commits follow Conventional Commits
 - [ ] PR Checks workflow passes (commitlint, skill validation)
 - [ ] SKILL.md remains under 500 lines
-- [ ] `metadata.json` and `package.json` are valid JSON
 
 ## Release Process
 
